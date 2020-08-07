@@ -1,5 +1,7 @@
 package test;
 
+import static org.testng.Assert.assertTrue;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -34,12 +36,7 @@ public class SettingsLinkTest {
 		googleSearchPage = new GoogleSearchPage(driver);
 		googleSearchPage.search("QA");
 		resultsPage = new ResultsPage(driver);
-		if(resultsPage.searchSettingsLink()) {
-			System.out.println("Si");
-		}
-		else{
-			System.out.println("No");
-		}
+		assertTrue(resultsPage.searchSettingsLink());
 	}
 	
 	@AfterTest
@@ -47,6 +44,5 @@ public class SettingsLinkTest {
 		//close browser
 		driver.close();
 		driver.quit();
-		System.out.println("Test completed successfully");
 	}
 }
