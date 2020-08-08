@@ -36,7 +36,15 @@ public class SettingsLinkTest {
 		googleSearchPage = new GoogleSearchPage(driver);
 		googleSearchPage.search("QA");
 		resultsPage = new ResultsPage(driver);
-		assertFalse(resultsPage.searchSettingsLink());
+		try {
+			assertFalse(resultsPage.searchSettingsLink());
+		}
+		catch(Exception exp) {
+			System.out.println("Test Failed");
+			System.out.print(exp.getCause());
+			exp.printStackTrace();
+		}
+		
 	}
 	
 	@AfterTest
