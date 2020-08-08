@@ -40,10 +40,10 @@ jobs:
       - run:
           name: Save test results
           command: |
-            mkdir -p ~/testng/results/
-            find . -type f -regex "./GoogleSearch/test-output/emailable-report.html" -exec cp {} ~/testng/results/ \;
+            mkdir -p ~/test-output/
+            find . -type f -regex "./GoogleSearch/test-output/emailable-report.html" -exec cp {} ~/test-output/ \;
           when: always
       - store_test_results:
-          path: ~/testng/results/
+          path: ~/test-output/
       - store_artifacts:
-          path: ~/testng/results/
+          path: ~/test-output/
