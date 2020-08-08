@@ -36,9 +36,9 @@ jobs:
 
       # run tests!
       - run: 
-        name: Run test
-        command: |
-          cd GoogleSearch && mvn clean test
+          name: Run test
+          command: |
+            cd GoogleSearch && mvn clean test
       
       - run:
           name: Save test results
